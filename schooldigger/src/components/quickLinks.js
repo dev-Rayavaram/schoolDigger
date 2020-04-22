@@ -1,7 +1,7 @@
 import React from 'react';
 function QuickLinks() {
     return (
-    <div className="header">
+    <div className="main">
             <h3 className="title">QuickLinks</h3>
       </div>
 
