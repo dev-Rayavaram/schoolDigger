@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import Header from './components/header'
 import Footer from './components/footer'
@@ -17,7 +16,7 @@ class  App extends Component {
     this.OnSearch = this.OnSearch.bind(this);
   }
   OnSearch(e){
-    alert("Search clicked")
+    alert("Search clicked");
     e.preventDefault();
 
   }
@@ -27,7 +26,6 @@ class  App extends Component {
         <div className="header">
           <Header/>
           <Navbar onClick={this.OnSearch}/>
-          {this.props.children}
         </div>
         <div className="body">
                 <Router>  
@@ -35,7 +33,7 @@ class  App extends Component {
                   <nav> 
                       <ul className="menu">
                       <li>
-                        <Link to="/" >School Search</Link>
+                        <Link to="/" ></Link>
                       </li>
                       <li>
                         <Link to="/" >My Schools List</Link>
