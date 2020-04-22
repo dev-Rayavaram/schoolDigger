@@ -1,4 +1,4 @@
-# SchoolDigger
+# School Explorer
 ## Mission Statement:
 1.  Provide a platform for parents to look for top schools and save data locally for a selected area.
 2. Audience for my projects are parents moving into Texas.
