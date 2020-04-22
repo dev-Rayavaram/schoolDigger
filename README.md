@@ -1,6 +1,7 @@
 # School Explorer
 ## Mission Statement:
 1.  Provide a platform for parents to look for top schools and save list locally for a selected area.
+2.  audience for my project are anyone who wants to search for schools for a city and save schools to his/her schools list for future reference.
 
 ## Wireframe
 ![wireframe](./schoolexplorer-wireframe.png)
