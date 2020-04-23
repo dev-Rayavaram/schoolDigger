@@ -64,105 +64,97 @@ class  App extends Component {
 
       if(this.state.isLoaded===true){
         return(
-         <div className="App">
-        <div className="header">
-          <Header/>
-          <>
-            <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
-            <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
-            <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
-            <Router>  
-                <>
-
-                  <nav> 
-                      <ul className="menu">
-                       <li>
-                        <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
-                      </li>
-                      <li>
-                        <Link to="/SearchHistory">Search History</Link>
-                      </li>
-                      <li>
-                        <Link to="/QuickLinks" >Resources</Link>
-                      </li>
-                    
-                     </ul>
-                  </nav>
-                  <Switch>
-                       <Route exact path="/SearchHistory" component={BrowserHistory}>  
-                       {this.props.children}
-        
-                      </Route> 
-                      <Route exact path="/SchoolsList" component={SchoolsList}>  
-                      {this.props.children}
-        
-                      </Route> 
-                      <Route exact path="/QuickLinks" component={QuickLinks}>          
-                      </Route>             
-            
-                   </Switch>
-                </>
-                </Router>            
-     
-          </>
-        </div>
-        <div className="body">
-          <Home data={this.state.schools}/>
-      </div>
-      <div className="footer">
-          <Footer/>
-        </div>
-      </div>
-        )
-      
-
-      }
-    else return (
       <div className="App">
-        <div className="header">
-          <Header/>
-          <>
-            <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
-            <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
-            <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
-          </>
-          <Router>  
-                  <nav> 
-                      <ul className="menu">
-                       <li>
-                        <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
-                      </li>
-                      <li>
-                        <Link to="/SearchHistory">Search History</Link>
-                      </li>
-                      <li>
-                        <Link to="/QuickLinks" >Resources</Link>
-                      </li>
-                    
-                     </ul>
-                  </nav>
-                  <Switch>
-                       <Route exact path="/SearchHistory" component={BrowserHistory}>  
-                       {this.props.children}
-        
-                      </Route> 
-                      <Route exact path="/SchoolsList" component={SchoolsList}>  
-                      {this.props.children}
-        
-                      </Route> 
-                      <Route exact path="/QuickLinks" component={QuickLinks}>          
-                      </Route>             
-            
-                   </Switch>
+          <div className="header">
+              <Header/>
+              <>
+                <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
+                <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
+                <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
+               <Router>  
+                <nav> 
+                <ul className="menu">
+                  <li>
+                  <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
+                </li>
+                <li>
+                  <Link to="/SearchHistory">Search History</Link>
+                </li>
+                <li>
+                  <Link to="/QuickLinks" >Resources</Link>
+                </li>
+
+                </ul>
+                </nav>
+                <Switch>
+                  <Route exact path="/SearchHistory" component={BrowserHistory}>  
+                  {this.props.children}
+
+                </Route> 
+                <Route exact path="/SchoolsList" component={SchoolsList}>  
+                {this.props.children}
+
+                </Route> 
+                <Route exact path="/QuickLinks" component={QuickLinks}>          
+                </Route>             
+
+                </Switch>
                 </Router>            
+              </>
+          </div>
+          <div className="body">
+              <Home data={this.state.schools}/>
+          </div>
+          <div className="footer">
+              <Footer/>
+          </div>
         </div>
-        <div className="body">
+          )
+
+
+          }
+          else return (
+              <div className="App">
+                    <div className="header">
+                       <Header/>
+                          <>
+                            <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
+                            <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
+                            <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
+                            <Router>  
+                              <nav> 
+                                <ul className="menu">
+                                  <li>
+                                    <Link  to={{ pathname: '/SchoolsList', state:           {schoolList: this.state.schools } }} >My Schools List</Link>
+                                </li>
+                                <li>
+                                    <Link to="/SearchHistory">Search History</Link>
+                                </li>
+                                <li>
+                                    <Link to="/QuickLinks" >Resources</Link>
+                                </li>
+                                </ul>
+                              </nav>
+                            <Switch>
+                                <Route exact path="/SearchHistory" component={BrowserHistory}>  
+                                  {this.props.children}
+                               </Route> 
+                              <Route exact path="/SchoolsList" component={SchoolsList}>  
+                                  {this.props.children}
+                              </Route> 
+                              <Route exact path="/QuickLinks" component={QuickLinks}>          
+                            </Route>             
+                          </Switch>
+                      </Router> 
+                  </>           
+          </div>
+          <div className="body">
+          </div>
+            <div className="footer">
+                <Footer/>
+            </div>
         </div>
-      <div className="footer">
-          <Footer/>
-        </div>
-      </div>
-      
+
     );
   }
  
