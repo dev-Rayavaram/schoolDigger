@@ -86,9 +86,9 @@ image{
   border: 4px solid #ddd;
   color: #555;
   font-size: 20px;
-  width: $container-width/4;
+  width: $container-width/8;
   padding: 10px 10px;
-  display: inline-block;
+  display:inline-flex;
   outline: 0;
 }
 .col-8 {
