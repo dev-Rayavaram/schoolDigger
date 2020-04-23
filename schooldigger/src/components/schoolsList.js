@@ -22,17 +22,18 @@ class SchoolsList extends Component {
                 console.log("inside schoollist render",this.state.schoolsList[0])
                 return (
                     <div className="main">
-                        {Object.values(this.state.schoolsList[0]).map((item,index)=>{return(
-                            <Item key={index} value={item} data={item}/>
+                            <h1>Your Favorites are</h1>
+                                {Object.values(this.state.schoolsList[0]).map((item,index)=>{return(
+                                <Item key={index} value={item} data={item}/>
                           )})}  
                     </div>
-        
+         
                 );
             }
             else{
                 return (
                     <div className="main">
-                            <h3 className="title">School</h3>
+                             <h3 className="title">School</h3>
                     </div>
         
                 );
