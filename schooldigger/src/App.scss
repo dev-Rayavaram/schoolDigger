@@ -75,7 +75,11 @@ image{
   width: ($container-width)-($container-width)/5;
   margin-top: 0%;
   margin-left: 15%;
-
+  overflow: hidden;
+  text-overflow: ellipsis;
+  #rank:hover {
+    overflow: visible;
+  }
   border: 2px solid black;
   @include media("(max-width: 767px)"){
       width: 100%;

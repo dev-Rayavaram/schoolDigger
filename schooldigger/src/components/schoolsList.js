@@ -48,11 +48,14 @@ function Item(props){
     let ranks = JSON.stringify(props.value.rankHistory)
     return(
         <React.Fragment>
-            <h3>School:{props.value.schoolName}</h3>
-            <h3>Phone:{props.value.phone}</h3>
-            <a href={props.value.url}>Link</a>
-            <h5>Rank:{ranks}</h5>
-        </React.Fragment>
+            <div className="container">
+                <h3>School:{props.value.schoolName}</h3>
+                <h3>Phone:{props.value.phone}</h3>
+                <a href={props.value.url}>Link</a>
+                <h5 id="rank">Rank:{ranks}</h5>
+
+            </div>
+         </React.Fragment>
 
     )
 }
