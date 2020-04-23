@@ -8,6 +8,8 @@ body {
     align-content: center;
     background: url("./images/images.png") no-repeat left top, linear-gradient(#eb01a5, #d13531);
     background-size: $container-width;
+    padding:0;
+    margin: 0;
 
 }
 
@@ -46,17 +48,31 @@ body {
 
 }
 .menu{
-  order:1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .main{
-  order:2;
   display: flex;
   flex-direction: column;
   background-color:#b2ad7f;
   min-width: 100vh;
   width:$container-width;
+}
+.main1{
+  order:1;
+  display: flex;
+  flex-direction: column;
+  background-color:#b2ad7f;
+  min-width: 100vh;
+  width:($container-width)/2;
+}
+.main2{
+  order:1;
+  display: flex;
+  flex-direction: column;
+  background-color:#b2ad7f;
+  min-width: 100vh;
+  width:($container-width)/2;
 }
 .profile{
   order:2;
