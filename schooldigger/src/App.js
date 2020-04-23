@@ -21,6 +21,7 @@ class  App extends Component {
         city:'',
         state:'',
         schools:[],
+        browserHistory:[],
         isLoaded:false
     }
     this.handleSearch = this.handleSearch.bind(this);
@@ -70,12 +71,8 @@ class  App extends Component {
             <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
             <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
             <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
-          </>
-        </div>
-        <div className="body">
-                <Router>  
-                <div className="main">
-                  <Home data={this.state.schools}/>
+            <Router>  
+                <>
 
                   <nav> 
                       <ul className="menu">
@@ -104,9 +101,14 @@ class  App extends Component {
                       </Route>             
             
                    </Switch>
-                </div>
+                </>
                 </Router>            
-       </div>
+     
+          </>
+        </div>
+        <div className="body">
+          <Home data={this.state.schools}/>
+      </div>
       <div className="footer">
           <Footer/>
         </div>
@@ -124,10 +126,7 @@ class  App extends Component {
             <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
             <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
           </>
-        </div>
-        <div className="body">
-                <Router>  
-                <div className="main">
+          <Router>  
                   <nav> 
                       <ul className="menu">
                        <li>
@@ -155,9 +154,10 @@ class  App extends Component {
                       </Route>             
             
                    </Switch>
-                </div>
                 </Router>            
-       </div>
+        </div>
+        <div className="body">
+        </div>
       <div className="footer">
           <Footer/>
         </div>
