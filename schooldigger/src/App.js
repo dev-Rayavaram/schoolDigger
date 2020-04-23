@@ -35,6 +35,8 @@ class  App extends Component {
     this.setState({state:e.target.value})
 }
   handleSearch(e){
+    e.preventDefault();
+
       alert("Search clicked");
       const city = this.state.city;
       const state = this.state.state;
@@ -48,17 +50,20 @@ class  App extends Component {
         const results = res.data;
         const schoolList = results.schoolList;        
         this.state.schools.push(...schoolList);
-        this.setState({isloaded:true})  
-        console.log("this.setState.school",this.state.schools)     
+        this.setState({isLoaded:true})  
+        console.log("this.setState.school",this.state.schools)
+       
       })
       .catch(error => {
         console.log('there is an eror', error)
       })
-      e.preventDefault();
-  }
+   }
   render(){
-    return (
-      <div className="App">
+    console.log(this.state.isLoaded)
+
+      if(this.state.isLoaded===true){
+        return(
+         <div className="App">
         <div className="header">
           <Header/>
           <>
@@ -70,12 +75,11 @@ class  App extends Component {
         <div className="body">
                 <Router>  
                 <div className="main">
+                  <Home data={this.state.schools}/>
+
                   <nav> 
                       <ul className="menu">
-                      <li>
-                        <Link  to={{ pathname: '/', state: {schoolList: this.state.schools } }} ></Link>
-                      </li>
-                      <li>
+                       <li>
                         <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
                       </li>
                       <li>
@@ -88,8 +92,7 @@ class  App extends Component {
                      </ul>
                   </nav>
                   <Switch>
-                      <Route exact path="/"  component={(props) => <Home {...props} data={this.state.schoolList}/>} />     
-                      <Route exact path="/SearchHistory" component={BrowserHistory}>  
+                       <Route exact path="/SearchHistory" component={BrowserHistory}>  
                        {this.props.children}
         
                       </Route> 
@@ -108,7 +111,58 @@ class  App extends Component {
           <Footer/>
         </div>
       </div>
+        )
+      
 
+      }
+    else return (
+      <div className="App">
+        <div className="header">
+          <Header/>
+          <>
+            <input type='text' className='input' name='city' placeholder='Plano' value={this.setState.city} onChange={this.handleCityChange}></input>
+            <input type='text' className='input' name='state' placeholder='TX' value={this.setState.state} onChange={this.handleStateChange}></input>
+            <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
+          </>
+        </div>
+        <div className="body">
+                <Router>  
+                <div className="main">
+                  <nav> 
+                      <ul className="menu">
+                       <li>
+                        <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
+                      </li>
+                      <li>
+                        <Link to="/SearchHistory">Search History</Link>
+                      </li>
+                      <li>
+                        <Link to="/QuickLinks" >Resources</Link>
+                      </li>
+                    
+                     </ul>
+                  </nav>
+                  <Switch>
+                       <Route exact path="/SearchHistory" component={BrowserHistory}>  
+                       {this.props.children}
+        
+                      </Route> 
+                      <Route exact path="/SchoolsList" component={SchoolsList}>  
+                      {this.props.children}
+        
+                      </Route> 
+                      <Route exact path="/QuickLinks" component={QuickLinks}>          
+                      </Route>             
+            
+                   </Switch>
+                </div>
+                </Router>            
+       </div>
+      <div className="footer">
+          <Footer/>
+        </div>
+      </div>
+      
     );
   }
  
