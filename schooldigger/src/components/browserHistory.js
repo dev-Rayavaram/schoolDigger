@@ -8,6 +8,8 @@ function BrowserHistory(props) {
     if(props.location.state !==null && props.location.state!==undefined){
         return (
             <div className="main">
+                 <div className="sub-main-2">
+                     <div className="container">                        
                         <ul>
                             <>
                             {Object.values(props.location.state).map((item,index)=>
@@ -18,14 +20,21 @@ function BrowserHistory(props) {
 
                              </>
                         </ul>
-                </div> 
+                    </div>
+
+                </div>
+            </div> 
         );
 
     }
     else{
         return (
             <div className="main">
-                Search to get results                    
+                 <div className="sub-main-2">
+                     <div className="container">    
+                        Search to get results  
+                    </div>
+                </div>                  
             </div>
         )    
     }
