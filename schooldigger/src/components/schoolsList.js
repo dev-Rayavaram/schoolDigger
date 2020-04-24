@@ -18,15 +18,22 @@ class SchoolsList extends Component {
         console.log("schools list data in SchoolsList Class",this.state.schoolsList)
     }
     render=()=>{
-            if(this.state.isLoaded===true){
+            if(this.state.isLoaded===true && this.state.schoolsList.length !==0){
                 console.log("inside schoollist render",this.state.schoolsList[0])
                 return (
                     <div className="main">
                         <div className="sub-main-2">
-                            <h1>Your Favorites are</h1>
-                                    {Object.values(this.state.schoolsList[0]).map((item,index)=>{return(
-                                    <output key={index}>School Name : {item}</output>
-                            )})}  
+                                <h1>Your Favorites are</h1>
+                                <ul>
+                                    <>
+                                    {Object.values(this.state.schoolsList[0]).map((item,index)=>
+                                        <li key={index}>
+                                            {item}
+                                        </li>
+                                    )}  
+  
+                                     </>
+                                </ul>
                         </div>
                      </div>
          
