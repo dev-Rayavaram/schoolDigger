@@ -1,7 +1,10 @@
 import React,{Component,useState,useEffect} from 'react';
 import { Button } from 'react-bootstrap';
-
-
+/*
+    create stateful component Home
+    initialize state with empty values
+    export Home
+*/
 class Home extends Component {
     constructor(props){
         super(props)
