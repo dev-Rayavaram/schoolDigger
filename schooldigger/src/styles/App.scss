@@ -6,6 +6,7 @@ body,html{
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
 
 }
 .App {
@@ -23,7 +24,7 @@ body,html{
   min-width: 100vh;
   justify-content: center;
   align-content: center;
-  background: url("../images/images.png") no-repeat left top, linear-gradient(#eb01a5, #d13531);
+    background-color:#b2ad7f;
   background-size: $container-width;
 }
 .header,
@@ -36,8 +37,13 @@ body,html{
   width:100%;
   background: url("../images/images.jpg") no-repeat left top, linear-gradient(#eb01a5, #d13531);
   background-size: $container-width;
+  
   h3{
     font-size: 25px;
+    color: white; font-weight: bold; 
+  }
+  p{
+    font-size: 20px;
     color: white; font-weight: bold; 
   }
 
@@ -49,24 +55,18 @@ body,html{
 .main{
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 50% 50%;
   background-color:#b2ad7f;
   min-width: 100vh;
   width:$container-width;
 }
-.sub-main-1{
-  display: flex;
-  flex-direction: column;
-  background-color:#b2ad7f;
-  min-width: 100vh;
-  width:($container-width)/2;
-}
+
 .sub-main-2{
   display: flex;
   flex-direction: column;
   background-color:#b2ad7f;
   min-width: 100vh;
-  width:($container-width)/2;
+  width:$container-width;
+  justify-content: center;
 }
 
 @mixin media($queryString){
@@ -83,10 +83,21 @@ body,html{
   #rank:hover {
     overflow: visible;
   }
+  label{
+    font-size: 25px;
+    color: white; font-weight: bold; 
+  }
+
   border: 2px solid black;
   @include media("(max-width: 767px)"){
       width: 100%;
   }
+}
+ul{
+      list-style: none;
+    li{
+        font-size: 25px;
+    }
 }
 .input {
   border-radius: 3px;
@@ -130,12 +141,12 @@ nav {
     text-decoration: none;
   }
   #{$a-tags} {
-    color: darkblue;
+    color: white;
     text-decoration: none;
     font-size: x-large;
     font-weight: bold;
   }
   #{$a-tags-hover} {
-    color: purple;
+    color:lightgreen;
   }
 }
