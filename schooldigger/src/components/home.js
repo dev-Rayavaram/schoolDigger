@@ -75,12 +75,21 @@ export default Home;
 */
 const SchoolData=(props)=>{
     const[state,addItem]=useState([]);
-
+/*
+    create a method with item one parameter
+    add state to current state using HOOK useState
+*/
     const setStateHandler=(item)=>{
         console.log("inside setStateHandler: ",item)
         addItem(state => [...state, item])
        // console.log("inside setStateHandler state inside function",state)
      }
+/*
+create an event handler for button
+get event target value
+call method to handle state
+to get updated state each time use REACT HOOK useEffect
+*/
     const handleAdd=(e)=>{
         e.preventDefault();
         const schoolName=e.target.value;
