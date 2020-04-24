@@ -79,15 +79,25 @@ const Item=(props)=>{
       });
 
   //  console.log("props inside functional ",props)
-    let ranks = JSON.stringify(props.value.rankHistory)
+    let ranks = props.value.rankHistory
+    let latestYear='';
+    let latestRank='';
+        if(ranks!==null && ranks.length>0){
+            latestRank=ranks[0]
+            latestYear=ranks[0].year;
+            latestRank=ranks[0].rank
+        }
+       console.log(" latestRank is :",latestRank) 
     return(
         <React.Fragment>
             <div className="container">
                 <h3>School:{props.value.schoolName}</h3>
                 <h3>Phone:{props.value.phone}</h3>
-                <a href={props.value.url}>Link</a>
-                <h5 id="rank">Rank:{ranks}</h5>
-                <Button type="button" value ={props.value.schoolName}  onClick={handleAdd.bind(null)}>Favorites</Button>
+                <h5 id="rank">Year:{latestYear} Rank: {latestRank} </h5>  
+                <a href={props.value.url}>Link to the School website</a>
+
+                <Button type="button" value ={props.value.schoolName}  onClick={handleAdd.bind(null)}>My Schools List</Button>
+
             </div>
          </React.Fragment>
 
