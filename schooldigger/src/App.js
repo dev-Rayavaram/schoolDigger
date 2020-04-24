@@ -18,8 +18,14 @@ display: grid with auto flow column(used multiple background-colors setting on e
 sub-main-2:
 set display to use flex with flex-direction column, and background-color primaryColor varible
 set minimum size, and justify content to use center
+declare @mixin element(to reuse defined mixin)
 
-
+container:
+set height by calculating container height - (container height/5=>header +footer height)
+set margin
+create nested label to style in the container
+include mixin element defined
+send parameters to the mixin element( that is max width for media  ) and content to 100%
 
 */
 import React,{Component} from 'react';
