@@ -56,6 +56,11 @@ setSavedList=(e)=>{
   }
  // console.log("setSavedList in App.js this.state.savedList",this.state.savedList);
 }
+/*
+  declare url to use for axios get method,set header parameters for cors 
+  make API call asynchrously
+  parse results  to sets state elements
+*/
 async handleSearch(e){
       e.preventDefault();
       const city = this.state.city;
@@ -72,7 +77,7 @@ async handleSearch(e){
         const schoolList = results.schoolList;        
         this.state.schools.push(...schoolList);
         this.setState({isLoaded:true})  
-        console.log(" async await this.setState.school",this.state.schools)
+        //console.log(" async await this.setState.school",this.state.schools)
 
        }
       catch (e){
