@@ -13,7 +13,6 @@ import { Button } from 'react-bootstrap';
 
 const apiKey=process.env.REACT_APP_API_KEY
 const appId=process.env.REACT_APP_ID
-
 class  App extends Component {
   constructor(props){
     super(props);
@@ -38,12 +37,11 @@ class  App extends Component {
     this.setState({state:e.target.value})
 }
 showSavedList=(e)=>{
-  alert(e)
-  console.log("showSavedList in APP.js ",e)
+  //console.log("showSavedList in APP.js ",e)
   if(e !==null && e.length !==0 ){
       e.map(item => this.state.savedList.push(item))
   }
-  console.log("showSavedList in App.js this.state.savedList",this.state.savedList);
+ // console.log("showSavedList in App.js this.state.savedList",this.state.savedList);
 }
 async handleSearch(e){
       e.preventDefault();
@@ -68,6 +66,7 @@ async handleSearch(e){
         console.log(e);
       }
    }
+ 
   render(){
     console.log(this.state.isLoaded)
       if(this.state.isLoaded===true){  
@@ -92,7 +91,9 @@ async handleSearch(e){
                 <li>
                   <Link to="/QuickLinks" >Resources</Link>
                 </li>
-
+                <li>
+                  <Link to='/' >Search Results</Link>
+                </li>
                 </ul>
                 </nav>
                 <Switch>
@@ -105,14 +106,14 @@ async handleSearch(e){
 
                 </Route> 
                 <Route exact path="/QuickLinks" component={QuickLinks}>          
-                </Route>             
+                </Route>  
+                <Home data={this.state.schools}  showSavedList={this.showSavedList}/>
 
                 </Switch>
                 </Router>            
               </>
           </div>
           <div className="body">
-              <Home data={this.state.schools}  showSavedList={this.showSavedList}/>
           </div>
           <div className="footer">
               <Footer/>
@@ -164,7 +165,7 @@ async handleSearch(e){
 
     );
   }
- 
+  
 }
 
 export default App;
