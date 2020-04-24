@@ -14,7 +14,7 @@ function BrowserHistory(props) {
                             <>
                             {Object.values(props.location.state).map((item,index)=>
                                 <li key={index}>
-                                   <h3>Your previous search location:</h3> {item[0]}{item[1]}
+                                   <h3>Your previous search location:</h3> {item[0]}  {item[1]}
                                 </li>
                             )}  
 
