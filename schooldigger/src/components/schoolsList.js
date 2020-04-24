@@ -7,7 +7,7 @@ class SchoolsList extends Component {
             isLoaded:false
         }
     }
-    componentDidMount(){
+    componentDidMount=()=>{
         console.log("schools list data componentDidMount",this.props.location.state)
 
         if(this.props.location.state !==null && this.props.location.state!==undefined){
@@ -17,23 +17,27 @@ class SchoolsList extends Component {
         }
         console.log("schools list data",this.state.schoolsList)
     }
-    render(){
+    render=()=>{
             if(this.state.isLoaded===true){
                 console.log("inside schoollist render",this.state.schoolsList[0])
                 return (
                     <div className="main">
+                        <div className="sub-main-2">
                             <h1>Your Favorites are</h1>
-                                {Object.values(this.state.schoolsList[0]).map((item,index)=>{return(
-                                <Item key={index} value={item} data={item}/>
-                          )})}  
-                    </div>
+                                    {Object.values(this.state.schoolsList[0]).map((item,index)=>{return(
+                                    <Item key={index} value={item} data={item}/>
+                            )})}  
+                        </div>
+                     </div>
          
                 );
             }
             else{
                 return (
                     <div className="main">
-                             <h3 className="title">School</h3>
+                        <div className="sub-main-2">
+                            <h3 className="title">School</h3>
+                        </div>
                     </div>
         
                 );
