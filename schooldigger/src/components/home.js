@@ -102,6 +102,11 @@ to get updated state each time use REACT HOOK useEffect
       });
 
   //  console.log("props inside functional ",props)
+  /*
+      IF ranks list has elemnts
+      get data for latest year and rank
+      return values to render
+  */
     let ranks = props.value.rankHistory
     let latestYear='';
     let latestRank='';
