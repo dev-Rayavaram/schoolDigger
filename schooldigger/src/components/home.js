@@ -71,8 +71,7 @@ export default Home;
     https://medium.com/javascript-in-plain-english/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc
 */
 /*
-    create stateless component SchoolData
-    
+    create stateless component SchoolData    
 */
 const SchoolData=(props)=>{
     const[state,addItem]=useState([]);
