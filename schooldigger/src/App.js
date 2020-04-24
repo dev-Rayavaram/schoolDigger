@@ -9,7 +9,6 @@ import SchoolsList from './components/schoolsList'
 import {Route,Switch,Link,BrowserRouter as Router} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap';
-import results from './seed';
 
 
 const apiKey=process.env.REACT_APP_API_KEY
@@ -28,6 +27,7 @@ class  App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
+    this.showSavedList=this.showSavedList.bind(this);
 
   }
   handleCityChange=(e)=>{
@@ -35,6 +35,9 @@ class  App extends Component {
   }
   handleStateChange=(e)=>{
     this.setState({state:e.target.value})
+}
+showSavedList=(e)=>{
+  alert(e)
 }
   handleSearch=(e)=>{
     e.preventDefault();
@@ -805,8 +808,8 @@ class  App extends Component {
    }
   render(){
     console.log(this.state.isLoaded)
-
-      if(this.state.isLoaded===true){
+      if(this.state.isLoaded===true){  
+        console.log("INSIDE APP.js ",BrowserHistory)
         return(
       <div className="App">
           <div className="header">
@@ -847,7 +850,7 @@ class  App extends Component {
               </>
           </div>
           <div className="body">
-              <Home data={this.state.schools} />
+              <Home data={this.state.schools}  showSavedList={this.showSavedList}/>
           </div>
           <div className="footer">
               <Footer/>
