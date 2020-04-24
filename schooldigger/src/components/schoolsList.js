@@ -12,6 +12,12 @@ class SchoolsList extends Component {
             isLoaded:false
         }
     }
+    /*
+        IF state from location props is NOT null && NOT undefined
+            map through location props state 
+            push each element to schoolsList state
+            set isLoaded to true
+    */
     componentDidMount=()=>{
       //  console.log("schools list data componentDidMount",this.props.location.state)
 
