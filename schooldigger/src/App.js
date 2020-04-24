@@ -43,10 +43,9 @@ showSavedList=(e)=>{
   if(e !==null && e.length !==0 ){
       e.map(item => this.state.savedList.push(item))
   }
-
   console.log("showSavedList in App.js this.state.savedList",this.state.savedList);
 }
-  handleSearch=(e)=>{
+async handleSearch(e){
       e.preventDefault();
       const city = this.state.city;
       const state = this.state.state;
@@ -56,18 +55,18 @@ showSavedList=(e)=>{
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json', 
       }
-      axios.get(url)
-      .then(res => {
-          const results = res.data;
-          const schoolList = results.schoolList;        
-          this.state.schools.push(...schoolList);
-          this.setState({isLoaded:true})  
-          console.log("this.setState.school",this.state.schools)
+      try{
+        const res = await axios.get(url);
+        const results = res.data;
+        const schoolList = results.schoolList;        
+        this.state.schools.push(...schoolList);
+        this.setState({isLoaded:true})  
+        console.log(" async await this.setState.school",this.state.schools)
 
-      })
-      .catch(error => {
-      console.log('there is an eror', error)
-      })
+       }
+      catch (e){
+        console.log(e);
+      }
    }
   render(){
     console.log(this.state.isLoaded)
