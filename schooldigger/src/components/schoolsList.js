@@ -11,22 +11,29 @@ class SchoolsList extends Component {
         console.log("schools list data componentDidMount",this.props.location.state)
 
         if(this.props.location.state !==null && this.props.location.state!==undefined){
-            console.log("inside componentDidMount")
-            Object.values(this.props.location.state).map((school,index)=>this.state.schoolsList.push(school)) 
-            this.setState({isLoaded:true})           
-        }
+            let items = this.props.location.state;
+            console.log("inside componentDidMount items" ,items)
+            if(items.length !==0){
+                let localSchoolsList = items.schoolList;
+                localSchoolsList.map((school,index)=>this.state.schoolsList.push(school)) 
+                this.setState({isLoaded:true})
+                console.log("inside componentDidMount items ",this.state.schoolsList);         
+            }
+         }
         console.log("schools list data in SchoolsList Class",this.state.schoolsList)
     }
     render=()=>{
             if(this.state.isLoaded===true && this.state.schoolsList.length !==0){
                 console.log("inside schoollist render",this.state.schoolsList[0])
+                let items = this.state.schoolsList;
+                console.log("items inside schoolList render",items)
                 return (
                     <div className="main">
                         <div className="sub-main-2">
                                 <h1>Your Favorites are</h1>
                                 <ul>
                                     <>
-                                    {Object.values(this.state.schoolsList[0]).map((item,index)=>
+                                    {items.map((item,index)=>
                                         <li key={index}>
                                             {item}
                                         </li>
