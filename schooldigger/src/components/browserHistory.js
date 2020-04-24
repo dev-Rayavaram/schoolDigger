@@ -1,5 +1,9 @@
 import React from 'react';
-
+/*
+    DECLARE BrowserHistory as a function component 
+    IF location param state is not null && not undefined
+        map through props location state and return each element to render
+*/
 function BrowserHistory(props) {
     if(props.location.state !==null && props.location.state!==undefined){
         return (
