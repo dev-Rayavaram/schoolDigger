@@ -46,7 +46,8 @@ class  App extends Component {
     this.setState({state:e.target.value})
 }
 /*
-showSavedList
+setSavedList gets data from child component and sets its savedList element,which can be passed 
+to schoolsList component
 */
 setSavedList=(e)=>{
   //console.log("setSavedList in APP.js ",e)
