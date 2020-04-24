@@ -14,8 +14,10 @@ style h3 and p elements as nested elements(scss feature) and set their color and
 main:
 set size container-size-(header+footer)
 set minimum height 
-display: grid with auto flow column
-
+display: grid with auto flow column(used multiple background-colors setting on each element to check if the elements are displaying properly)
+sub-main-2:
+set display to use flex with flex-direction column, and background-color primaryColor varible
+set minimum size, and justify content to use center
 
 
 
