@@ -14,7 +14,10 @@ class Home extends Component {
             isLoaded:false
         }
     }
- 
+    /*
+        IF props.data is NOT null && NOT unidentified
+        map through props data and add items to schoolsList array state variable
+    */
     componentDidMount=()=>{
      //   console.log("home componentDidMount",this.props.data)
 
