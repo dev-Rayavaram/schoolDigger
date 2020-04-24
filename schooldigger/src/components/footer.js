@@ -1,5 +1,9 @@
 import React from 'react';
-
+/*
+    DECLARE stateless component Footer
+    add p tag to add text
+    export component
+*/
 function Footer() {
     return (
     <div className="footer">
