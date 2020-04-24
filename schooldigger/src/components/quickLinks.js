@@ -1,4 +1,9 @@
 import React from 'react';
+/*
+    create stateless component 
+    render with resources from external sources
+    export component
+*/
 function QuickLinks() {
     return (
     <div className="main">
