@@ -22,7 +22,8 @@ class  App extends Component {
         state:'',
         schools:[],
         browserHistory:[],
-        isLoaded:false
+        isLoaded:false,
+        savedList:[]
     }
     this.handleSearch = this.handleSearch.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
@@ -37,7 +38,12 @@ class  App extends Component {
     this.setState({state:e.target.value})
 }
 showSavedList=(e)=>{
-  alert(e)
+  console.log("showSavedList in APP.js ",e)
+  if(e !==null && e.length !==0 ){
+      e.map(item => this.state.savedList.push(item))
+  }
+
+  console.log("showSavedList in App.js this.state.savedList",this.state.savedList);
 }
   handleSearch=(e)=>{
     e.preventDefault();
@@ -822,7 +828,7 @@ showSavedList=(e)=>{
                 <nav> 
                 <ul className="menu">
                   <li>
-                  <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.schools } }} >My Schools List</Link>
+                  <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.savedList } }} >My Schools List</Link>
                 </li>
                 <li>
                   <Link to="/SearchHistory">Search History</Link>
