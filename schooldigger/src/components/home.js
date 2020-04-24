@@ -28,6 +28,10 @@ class Home extends Component {
         }
       //  console.log("schools list data",this.state.schoolsList)
     }
+    /*
+        IF schoolsList state is NOT null && NOT unidentified
+        then render child elements and send setSavedList method as a prop
+    */
     render=()=>{
             if(this.state.isLoaded===true){
              //   console.log("inside schoollist render",this.state.schoolsList)
