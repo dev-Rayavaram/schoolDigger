@@ -80,7 +80,7 @@ const SchoolData=(props)=>{
     add state to current state using HOOK useState
 */
     const setStateHandler=(item)=>{
-        console.log("inside setStateHandler: ",item)
+      //  console.log("inside setStateHandler: ",item)
         addItem(state => [...state, item])
        // console.log("inside setStateHandler state inside function",state)
      }
@@ -103,9 +103,10 @@ to get updated state each time use REACT HOOK useEffect
 
   //  console.log("props inside functional ",props)
   /*
+      get data from props
       IF ranks list has elemnts
-      get data for latest year and rank
-      return values to render
+        get data for latest year and rank
+      return rendered elements with  props data
   */
     let ranks = props.value.rankHistory
     let latestYear='';
