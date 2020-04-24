@@ -84,9 +84,12 @@ async handleSearch(e){
         console.log(e);
       }
    }
- 
+ /*
+  render child components using react-router
+   send state, props to child components as location params in links
+ */
   render(){
-    console.log(this.state.isLoaded)
+   // console.log(this.state.isLoaded)
       if(this.state.isLoaded===true){  
       //  console.log("INSIDE APP.js ",BrowserHistory)
         return(
