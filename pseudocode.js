@@ -27,4 +27,11 @@ create nested label to style in the container
 include mixin element defined
 send parameters to the mixin element( that is max width for media  ) and content to 100%
 
+ul/li
+set ul li elements to use so-style and set font for li elements
+
+
+
+
+
 */
