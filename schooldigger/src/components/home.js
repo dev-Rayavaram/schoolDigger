@@ -39,7 +39,7 @@ class Home extends Component {
                     <div className="main">
                         <div className="sub-main-2">
                             {Object.values(this.state.schoolsList).map((item,index)=>{return(
-                                <Item key={index} value={item} data={item} setSavedList={this.props.setSavedList}/>
+                                <SchoolData key={index} value={item} data={item} setSavedList={this.props.setSavedList}/>
                             )})}  
                         </div>
                     </div>
@@ -70,12 +70,17 @@ export default Home;
     https://www.youtube.com/watch?v=-MlNBTSg_Ww
     https://medium.com/javascript-in-plain-english/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc
 */
-const Item=(props)=>{
+/*
+    create stateless component SchoolData
+    
+*/
+const SchoolData=(props)=>{
     const[state,addItem]=useState([]);
+
     const setStateHandler=(item)=>{
         console.log("inside setStateHandler: ",item)
         addItem(state => [...state, item])
-        console.log("inside setStateHandler state inside function",state)
+       // console.log("inside setStateHandler state inside function",state)
      }
     const handleAdd=(e)=>{
         e.preventDefault();
@@ -83,7 +88,7 @@ const Item=(props)=>{
         setStateHandler(schoolName); 
     }
     useEffect(() => {
-        console.log("inside setStateHandler state useEffect",state);
+       // console.log("inside setStateHandler state useEffect",state);
         props.setSavedList(state)
 
       });
