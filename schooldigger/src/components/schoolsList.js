@@ -33,6 +33,12 @@ class SchoolsList extends Component {
          }
     //    console.log("schools list data in SchoolsList Class",this.state.schoolsList)
     }
+    /*
+        IF the component has state isLoaded true and schoolsList has elements
+            get items from schools list
+            map through items
+            render values using li elements
+    */
     render=()=>{
             if(this.state.isLoaded===true && this.state.schoolsList.length !==0){
            //     console.log("inside schoollist render",this.state.schoolsList[0])
