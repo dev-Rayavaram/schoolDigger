@@ -33,9 +33,10 @@ set ul li elements to use so-style and set font for li elements
 input
 set border, padding, font-size, inline-flex display and color for the input boxes
 
-
-
-
-
+declare achor-tags for different states(hover, active , and none)
+set link style to none
+set achor tags padding, font-size and color
+set different colors for :active ,:hover states
+set background-color for :active state
 
 */
