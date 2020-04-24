@@ -1,18 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 $container-width: 100%;
-
-$primaryColor: #cccccc;
+$container-height:100%;
+$primaryColor: #b2ad7f;
 body,html{
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-
 }
 .App {
   text-align: center;
   width: $container-width;
-  background-color:#bbbbbb;
+  background-color:$primaryColor;
  
 }
 
@@ -24,7 +20,7 @@ body,html{
   min-width: 100vh;
   justify-content: center;
   align-content: center;
-    background-color:#b2ad7f;
+    background-color:$primaryColor;
   background-size: $container-width;
 }
 .header,
@@ -55,15 +51,16 @@ body,html{
 .main{
   display: grid;
   grid-auto-flow: column;
-  background-color:#b2ad7f;
   min-width: 100vh;
   width:$container-width;
+  height:($container-height)-($container-height)/5;
+  background-color: $primaryColor;
 }
 
 .sub-main-2{
   display: flex;
   flex-direction: column;
-  background-color:#b2ad7f;
+  background-color:$primaryColor;
   min-width: 100vh;
   width:$container-width;
   justify-content: center;
@@ -75,14 +72,9 @@ body,html{
   }
 }
 .container {
-  width: ($container-width)-($container-width)/5;
-  margin-top: 0%;
-  margin-left: 15%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  #rank:hover {
-    overflow: visible;
-  }
+  height: ($container-height)-($container-height)/5;
+  margin-top: 2%;
+  margin-left: 10%;
   label{
     font-size: 25px;
     color: white; font-weight: bold; 
@@ -109,21 +101,10 @@ ul{
   display:inline-flex;
   outline: 0;
 }
-.col-8 {
-  width:  ($container-width)-($container-width)/4;
-  margin-left: 20%;
-  padding: 10px;
-  label{
-    font-size: 25px;
-    color: black; font-weight: bold; display: block; width: 150px; float: left; 
-  }
-}
-.col-4 {
-  width: $container-width/4;
-}
 
 $a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+$a-tags-hover: 'a:hover';
+$a-tags-active:'a:active';
  
 
 nav {
@@ -148,5 +129,10 @@ nav {
   }
   #{$a-tags-hover} {
     color:lightgreen;
+  }
+  #{$a-tags-active}{
+    color:blue;
+    background-color:$primaryColor;
+
   }
 }
