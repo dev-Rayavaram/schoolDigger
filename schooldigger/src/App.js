@@ -1,9 +1,16 @@
 /*Pseudocode for css files
-initialize container width
+initialize container width(this is possible wih scss bootstrap )
 initialize primary color for the application
 set html and body display using flex(to be responsive)
+App: 
 set primary color and width to use variables declared 
-for body set minimum width and minimum height
+body: 
+set minimum width and minimum height and again set background color and justify content to use
+center values
+header/footer: 
+set display to use flex, wrap , and set flex direction to use row
+set height,width ,background-image and set background image size to container size
+style h3 and p elements as nested elements(scss feature) and set their color and font
 
 
 
