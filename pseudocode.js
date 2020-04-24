@@ -30,6 +30,10 @@ send parameters to the mixin element( that is max width for media  ) and content
 ul/li
 set ul li elements to use so-style and set font for li elements
 
+input
+set border, padding, font-size, inline-flex display and color for the input boxes
+
+
 
 
 
