@@ -1,6 +1,5 @@
-import React,{Component,useState, useReducer} from 'react';
+import React,{Component,useState} from 'react';
 import { Button } from 'react-bootstrap';
-import BrowserHistory from './browserHistory';
 
 
 class Home extends Component {
@@ -28,7 +27,7 @@ class Home extends Component {
                 console.log("inside schoollist render",this.state.schoolsList)
                 return (
                     <div className="main">
-                        <div className="sub-main-1">
+                        <div className="sub-main-2">
                             {Object.values(this.state.schoolsList).map((item,index)=>{return(
                                 <Item key={index} value={item} data={item} showSavedList={this.props.showSavedList}/>
                             )})}  
