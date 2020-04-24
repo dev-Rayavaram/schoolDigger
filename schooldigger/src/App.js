@@ -792,8 +792,9 @@ showSavedList=(e)=>{
  
 
 
-    //   const city = this.state.city;
-    //   const state = this.state.state;
+        const city = this.state.city;
+        const state = this.state.state;
+        this.state.browserHistory.push([city,state])
     //   const url = `https://api.schooldigger.com/v1.2/schools?st=${state}&city=${city}&sortBy=rank&appID=${appId}&appKey=${apiKey}`;
     //   axios.headers={
     //     'Access-Control-Allow-Origin': '*',
@@ -831,7 +832,7 @@ showSavedList=(e)=>{
                   <Link  to={{ pathname: '/SchoolsList', state: {schoolList: this.state.savedList } }} >My Schools List</Link>
                 </li>
                 <li>
-                  <Link to="/SearchHistory">Search History</Link>
+                  <Link to={{ pathname: '/SearchHistory', state: {searchHistory: this.state.browserHistory } }} >Search History</Link>
                 </li>
                 <li>
                   <Link to="/QuickLinks" >Resources</Link>
