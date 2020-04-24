@@ -11,9 +11,10 @@ header/footer:
 set display to use flex, wrap , and set flex direction to use row
 set height,width ,background-image and set background image size to container size
 style h3 and p elements as nested elements(scss feature) and set their color and font
-
-
-
+main:
+set size container-size-(header+footer)
+set minimum height 
+display: grid with auto flow column
 
 
 
