@@ -1,3 +1,17 @@
+/*Pseudocode for css files
+initialize container width
+initialize primary color for the application
+set html and body display using flex(to be responsive)
+set primary color and width to use variables declared 
+for body set minimum width and minimum height
+
+
+
+
+
+
+
+*/
 import React,{Component} from 'react';
 import './styles/App.scss';
 import Header from './components/header'
@@ -70,7 +84,7 @@ async handleSearch(e){
   render(){
     console.log(this.state.isLoaded)
       if(this.state.isLoaded===true){  
-        console.log("INSIDE APP.js ",BrowserHistory)
+      //  console.log("INSIDE APP.js ",BrowserHistory)
         return(
       <div className="App">
           <div className="header">
