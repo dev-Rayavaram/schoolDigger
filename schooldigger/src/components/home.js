@@ -29,7 +29,7 @@ class Home extends Component {
                     <div className="main">
                         <div className="sub-main-2">
                             {Object.values(this.state.schoolsList).map((item,index)=>{return(
-                                <Item key={index} value={item} data={item} showSavedList={this.props.showSavedList}/>
+                                <Item key={index} value={item} data={item} setSavedList={this.props.setSavedList}/>
                             )})}  
                         </div>
                     </div>
@@ -56,7 +56,7 @@ export default Home;
 /*  The following function uses react HOOKs for maintaining state in stateless components that are 
     functional components using useState,useEffect. useState is similar to setState in class component
     and useEffect waits for useState to finish job before returning data, so calling
-    showSavedList inside useEffect will get the updated data from useState
+    setSavedList inside useEffect will get the updated data from useState
     https://www.youtube.com/watch?v=-MlNBTSg_Ww
     https://medium.com/javascript-in-plain-english/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc
 */
@@ -74,7 +74,7 @@ const Item=(props)=>{
     }
     useEffect(() => {
         console.log("inside setStateHandler state useEffect",state);
-        props.showSavedList(state)
+        props.setSavedList(state)
 
       });
 
@@ -87,7 +87,7 @@ const Item=(props)=>{
             latestYear=ranks[0].year;
             latestRank=ranks[0].rank
         }
-       console.log(" latestRank is :",latestRank) 
+      // console.log(" latestRank is :",latestRank) 
     return(
         <React.Fragment>
             <div className="container">

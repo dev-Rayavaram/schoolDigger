@@ -10,7 +10,9 @@ import SchoolsList from './components/schoolsList'
 import {Route,Switch,Link,BrowserRouter as Router} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap';
-
+/*
+initialise class component with default state
+*/
 
 const apiKey=process.env.REACT_APP_API_KEY
 const appId=process.env.REACT_APP_ID
@@ -28,21 +30,30 @@ class  App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
-    this.showSavedList=this.showSavedList.bind(this);
+    this.setSavedList=this.setSavedList.bind(this);
 
   }
+  /*
+  add a button handler to change the component state for city variable with new value
+  */ 
   handleCityChange=(e)=>{
       this.setState({city:e.target.value})
   }
+  /*
+  add a button handler to change the component state for state variable with new value
+  */ 
   handleStateChange=(e)=>{
     this.setState({state:e.target.value})
 }
-showSavedList=(e)=>{
-  //console.log("showSavedList in APP.js ",e)
+/*
+showSavedList
+*/
+setSavedList=(e)=>{
+  //console.log("setSavedList in APP.js ",e)
   if(e !==null && e.length !==0 ){
       e.map(item => this.state.savedList.push(item))
   }
- // console.log("showSavedList in App.js this.state.savedList",this.state.savedList);
+ // console.log("setSavedList in App.js this.state.savedList",this.state.savedList);
 }
 async handleSearch(e){
       e.preventDefault();
@@ -108,7 +119,7 @@ async handleSearch(e){
                 </Route> 
                 <Route exact path="/QuickLinks" component={QuickLinks}>          
                 </Route>  
-                <Home data={this.state.schools}  showSavedList={this.showSavedList}/>
+                <Home data={this.state.schools}  setSavedList={this.setSavedList}/>
 
                 </Switch>
                 </Router>            
