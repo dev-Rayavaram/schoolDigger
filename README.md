@@ -4,7 +4,7 @@
 2.  audience for my project are anyone who wants to search for schools for a city and select few schools from the list and save schools to his/her schools list for a future reference.
 
 ## Wireframe
-![wireframe](./schoolexplorer-wireframe.png)
+![wireframe](./schoolexplorer-wireframe-updated.png)
 
 ## Apllication Instructions:
 
