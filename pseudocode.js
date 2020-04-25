@@ -119,13 +119,14 @@ create SchoolsList as a class component
             display page with links from external sources
         export component
 
-
-
-
-
-
-
-
-
-
+*/
+/*
+    pseudocode for deployment
+        build application using npm run build
+        initialize firebase
+            use firebase to host the website
+            set project index.html as starting page
+            host the website
+        embed hosted website link in README
+ 
 */
