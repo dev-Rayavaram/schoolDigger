@@ -58,7 +58,32 @@ initialise class component App.js
     declare state with  city:'', state:'',schools:[],browserHistory:[],isLoaded:false,savedList:
     create methods handleSearch,handleCityChange,handleStateChange,setSavedList
     implement lifecycle method componentDidMount to make async axios call from API
+        declare url to use for axios get method,set header parameters for cors 
+        make API call asynchrously
+        parse results  to sets state elements
     implement lifecycle method render to route child elements
+
+implement child components
+ create BrowserHistory as a function component 
+    IF location param state is not null && not undefined
+        map through props location state and render each element
+
+create SchoolsList as a class component
+    initialize with empty state variables
+    implement lifecycle method componentDidMount
+        procedure componentDidMount
+         IF state from location props is NOT null && NOT undefined
+            map through location props state 
+            push each element to schoolsList state
+            set isLoaded to true
+    implement lifecycle method render
+        procedure render
+            IF the component has state isLoaded true and schoolsList has elements
+                get items from schools list
+                map through items
+                render values using li elements
+
+    export component
 
 
 
