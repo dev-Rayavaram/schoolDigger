@@ -42,12 +42,25 @@ set background-color for :active state
 */
 /*
 Whole Application pseudocode
+ # Stateless components
+ 1.   BrowserHistory
+ 2.   School Data
+ 3.   Header
+ 4.   Footer
+ 6.   QuickLinks
+
+ # Stateful components
+ 1.   SchoolsList 
+ 2.   Home
+ 3.   App.js
 
 initialise class component App.js 
     declare state with  city:'', state:'',schools:[],browserHistory:[],isLoaded:false,savedList:
     create methods handleSearch,handleCityChange,handleStateChange,setSavedList
     implement lifecycle method componentDidMount to make async axios call from API
     implement lifecycle method render to route child elements
+
+
 
 
 
