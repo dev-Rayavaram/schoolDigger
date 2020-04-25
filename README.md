@@ -28,5 +28,6 @@
 
  #  Resources
 1.  https://www.youtube.com/watch?v=-MlNBTSg_Ww
+2.  https://scotch.io/tutorials/getting-started-with-sass
 
 
