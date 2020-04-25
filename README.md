@@ -27,7 +27,9 @@
  1. https://developer.schooldigger.com/
 
  #  Resources
+ ###    React Hooks Crash Course
 1.  https://www.youtube.com/watch?v=-MlNBTSg_Ww
+### Getting Started with SASS tutorial
 2.  https://scotch.io/tutorials/getting-started-with-sass
 
 
