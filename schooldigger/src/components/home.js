@@ -1,5 +1,6 @@
 import React,{Component,useState,useEffect} from 'react';
 import { Button } from 'react-bootstrap';
+
 /*
     create stateful component Home
     initialize state with empty values
@@ -123,8 +124,7 @@ to get updated state each time use REACT HOOK useEffect
                 <h3>School:{props.value.schoolName}</h3>
                 <h3>Phone:{props.value.phone}</h3>
                 <h5 id="rank">Year:{latestYear} Rank: {latestRank} </h5>  
-                <a href={props.value.url}>Link to the School website</a>
-
+                <a href={props.value.url}>Link  <i className=" fa fas fa-link"></i></a>
                 <Button type="button" value ={props.value.schoolName}  onClick={handleAdd.bind(null)}>My Schools List</Button>
 
             </div>
