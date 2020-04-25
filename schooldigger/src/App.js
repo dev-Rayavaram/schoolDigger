@@ -98,7 +98,7 @@ async handleSearch(e){
               <Header/>
               <>
                 <input type='text' className='input' name='city' placeholder='city' value={this.setState.city} onChange={this.handleCityChange}></input>
-                <input type='text' className='input' name='state' placeholder='state code' value={this.setState.state} onChange={this.handleStateChange}></input>
+                <input type='text' className='input' name='state' placeholder='state-code' value={this.setState.state} onChange={this.handleStateChange}></input>
                 <Button variant="primary" type="submit" onClick={this.handleSearch}> Search</Button>
                <Router>  
                 <nav> 
