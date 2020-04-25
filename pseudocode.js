@@ -107,7 +107,17 @@ create SchoolsList as a class component
                     display data on DOM
 
 
+        create stateless component Footer
+            display some data in DOM
+        export component
 
+        create stateless component Header
+            add title
+        export Header
+
+        create QuickLinks as a stateless component 
+            display page with links from external sources
+        export component
 
 
 
