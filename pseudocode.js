@@ -67,6 +67,7 @@ implement child components
  create BrowserHistory as a function component 
     IF location param state is not null && not undefined
         map through props location state and render each element
+    export BrowserHistory
 
 create SchoolsList as a class component
     initialize with empty state variables
@@ -83,7 +84,27 @@ create SchoolsList as a class component
                 map through items
                 render values using li elements
 
-    export component
+    export SchoolsList
+
+    create stateful component Home
+        initialize state with empty values
+        implement lifecycle method componentDidMount
+            procedure componentDidMount
+                IF props.data is NOT null && NOT unidentified
+                    map through props data and add items to schoolsList array state variable
+        implement lifecycle method render
+            procedure render
+                IF schoolsList state is NOT null && NOT unidentified
+                    then render child element SchoolData and send setSavedList method as a prop
+    export Home
+    create SchoolData as a functional component
+        create an event handler for button
+            get event target value
+            call method to handle state
+            to get updated state each time use REACT HOOK useEffect
+             get data from props
+                IF data exists
+                    display data on DOM
 
 
 
