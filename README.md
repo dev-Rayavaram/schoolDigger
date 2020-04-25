@@ -35,5 +35,9 @@
 ### React Website Deployment With Firebase
 1.  https://www.youtube.com/watch?v=IDHfvpsYShs
 
+### Resources for embedding links
+1.  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+
+### Link to Website
 [School Explorer](https://explore-schools.firebaseapp.com/)
 
