@@ -40,3 +40,23 @@ set different colors for :active ,:hover states
 set background-color for :active state
 
 */
+/*
+Whole Application pseudocode
+
+initialise class component App.js 
+    declare state with  city:'', state:'',schools:[],browserHistory:[],isLoaded:false,savedList:
+    create methods handleSearch,handleCityChange,handleStateChange,setSavedList
+    implement lifecycle method componentDidMount to make async axios call from API
+    implement lifecycle method render to route child elements
+
+
+
+
+
+
+
+
+
+
+
+*/
