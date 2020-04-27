@@ -28,7 +28,7 @@ class SchoolsList extends Component {
                 let localSchoolsList = items.schoolList;
                 localSchoolsList.map((school,index)=>this.state.schoolsList.push(school)) 
                 this.setState({isLoaded:true})
-             //   console.log("inside componentDidMount items ",this.state.schoolsList);         
+                console.log("inside componentDidMount items ",this.state.schoolsList);         
             }
          }
     //    console.log("schools list data in SchoolsList Class",this.state.schoolsList)
