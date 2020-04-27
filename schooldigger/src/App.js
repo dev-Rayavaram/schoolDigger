@@ -11,7 +11,7 @@ import {Route,Switch,Link,BrowserRouter as Router} from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap';
 /*
-initialise class component with default state
+initialise class component App.js with default state
 */
 
 const apiKey=process.env.REACT_APP_API_KEY
@@ -66,6 +66,8 @@ async handleSearch(e){
       const city = this.state.city;
       const state = this.state.state;
       this.state.browserHistory.push([city,state])
+      //https://api.schooldigger.com/v1.2/schools?st=TX&city=Plano&appID=f6d9b048&appKey=27623da61a0fa3d0252bc160c4f29c82
+
       const url = `https://api.schooldigger.com/v1.2/schools?st=${state}&city=${city}&sortBy=rank&appID=${appId}&appKey=${apiKey}`;
       axios.headers={
       'Access-Control-Allow-Origin': '*',
@@ -134,9 +136,7 @@ async handleSearch(e){
                 </Router>            
               </>
           </div>
-          <div className="body">
-          </div>
-          <div className="footer">
+           <div className="footer">
               <Footer/>
           </div>
         </div>
